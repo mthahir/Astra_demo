@@ -33,23 +33,18 @@ This is a full blown demo of DataStax Astra and uses three drivers - Python, Jav
 
     $ cqlsh -u username -p password -b /path/to/secure-connectdatabase_name.zip
 
-  3. create tables and indexes
-    1. type "source 'schema.cql';" and run the script to create tables (you need to change the keyspace name in the script)
+  3. create tables and indexes by running the following commands on your CQLSH
 
       source 'schema.cql'
 
-    2. type "source 'index.cql';" to create the indexes (you need to change the keyspace name in the script)
-
       source 'index.cql';
 
-    3. type "source 'listTables.cql'" to list the tables created
+  4. List the tables and indexes you created
 
       source 'listTables.cql';
 
-    4. type "source 'listindexs.cql'" to list your indexes
-
       source 'listIndexes.cql';
-  
+
 # Step -4 load Data
   load all the tables using the dsbulk command in source/bulkload/load_scripts
   there are five tables to be loaded.
@@ -66,6 +61,7 @@ This is a full blown demo of DataStax Astra and uses three drivers - Python, Jav
     $ cd  /yourproject/source/python
 
   3. edit the environment variables in your /source/demo.env (userid, password, secure bundle loc, kespace name etc.)
+
   4. run the python script:
 
     $ Python3 listTables.py
@@ -103,28 +99,28 @@ This is a full blown demo of DataStax Astra and uses three drivers - Python, Jav
     install: https://maven.apache.org/install.html
   2. create a mavern app in your project folder
 
-    $ cd /yourprojectfolder/
+      $ cd /yourprojectfolder/
 
-    $ mvn archetype:generate -DgroupId=com.datastax.app -DartifactId=myApp -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
+      $ mvn archetype:generate -DgroupId=com.datastax.app -DartifactId=myApp -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
 
   3. replace the pom.xml file in your newly created myApp folder with the pom.xml in your /source/java folder
      note: This step adds the DataStax Java driver dependency to your pom.xml file
 
-    $ cd /myApp
+     $ cd /myApp
 
-    $ cp ../source/java/pom.xml .
+     $ cp ../source/java/pom.xml .
 
   4. copy the file riskFactor.java from /source/java folder to /myApp/src/main/java/com/datastax/app
 
-    $ cp ../source/java/riskFactor.java ./src/main/java/com/datastax/app
+      $ cp ../source/java/riskFactor.java ./src/main/java/com/datastax/app
 
   5. compile the application
 
-    $ mvn clean install
+      $ mvn clean install
 
   6. run the application
 
-    $ mvn exec:java -Dexec.mainClass="com.datastax.app.riskFactor" -Dexec.args="/myproject directory/source/demo.env"
+      $ mvn exec:java -Dexec.mainClass="com.datastax.app.riskFactor" -Dexec.args="/myproject directory/source/demo.env"
 
   note: the argument is the path to demo.env file which contains the database credentials. pls make sure the demo.env file has the correct credentials
 
