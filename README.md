@@ -49,8 +49,7 @@ This is a full blown demo of DataStax Astra and uses three drivers - Python, Jav
     4. type "source 'listindexs.cql'" to list your indexes
 
       source 'listIndexes.cql';
-
-
+  
 # Step -4 load Data
   load all the tables using the dsbulk command in source/bulkload/load_scripts
   there are five tables to be loaded.
