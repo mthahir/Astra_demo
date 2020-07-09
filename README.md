@@ -1,4 +1,4 @@
-# 🎓🔥 DataStax Astra Full Demo 🔥🎓
+# 🔥 DataStax Astra Full Demo 🔥
 
 This is a full blown demo of DataStax Astra and uses three drivers - Python, Javascript and Java, and Astra Data API with GraphQL. It also demonstrate how to connect Astra with Datastax client tools such as DSBULK, CQLSH etc. and also an integration with visualization tool, KNOWI
 
