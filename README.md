@@ -27,7 +27,7 @@ This is a full blown demo of DataStax Astra and uses three drivers - Python, Jav
 # STEP -3 Define Schemas
   1. cd to /source/cql in your project folder
 
-     $ cd /source/cql
+    $ cd /source/cql
 
   2. Start CQLSH
 
@@ -60,7 +60,7 @@ This is a full blown demo of DataStax Astra and uses three drivers - Python, Jav
   This script is using python driver.
   1. install Datastax cassandra driver:
 
-     $ pip install cassandra-driver
+    $ pip install cassandra-driver
 
   2. cd to /yourproject/source/pythons
 
@@ -84,7 +84,7 @@ This is a full blown demo of DataStax Astra and uses three drivers - Python, Jav
   In this step, we are using Node.js driver and updating an existing table after aggregating data from policy_info
   1. Install Datastax Node.js driver:
 
-     $ npm install cassandra-driver
+    $ npm install cassandra-driver
 
   2. edit the environment variables in your /source/demo.env (userid, password, secure bundle loc, kespace name etc.)
   2. cd to your js folder:
@@ -126,8 +126,8 @@ This is a full blown demo of DataStax Astra and uses three drivers - Python, Jav
   6. run the application
 
     $ mvn exec:java -Dexec.mainClass="com.datastax.app.riskFactor" -Dexec.args="/myproject directory/source/demo.env"
-    
-    note: the argument is the path to demo.env file which contains the database credentials. pls make sure the demo.env file has the correct credentials
+
+  note: the argument is the path to demo.env file which contains the database credentials. pls make sure the demo.env file has the correct credentials
 
 # Step -9 DataStax Astra Data API (REST API)
   1. Get an authorization token (this step is required before running any operation on Data API. The token expires after 30 mts)
