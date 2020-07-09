@@ -1,0 +1,38 @@
+-- get authorization token (change url, userid and passWord)
+
+curl --request POST \
+  --url https://{databaseid}-{region}.apps.astra.datastax.com/api/rest/v1/auth \
+  --header 'accept: */*' \
+  --header 'content-type: application/json' \
+  --header 'x-cassandra-request-id: 43f01586-62b7-452c-9fd8-6952a14bb94d' \
+  --data '{"username":"userId","password":"passWord"}'
+
+-- display keyspaces (you will have to update the url and authorization token)
+
+curl --request GET \
+  --url https://{databaseid}-{region}.apps.astra.datastax.com/api/rest/v1/keyspaces \
+  --header 'accept: application/json' \
+  --header 'x-cassandra-request-id: 43f01586-62b7-452c-9fd8-6952a14bb94d' \
+  --header 'x-cassandra-token: 856e551f-d012-40a5-84f0-a495e9a5b5d0'
+
+-- retrieve a row
+
+curl --request GET \
+  --url https://{databaseid}-{region}.apps.astra.datastax.com/api/rest/v1/keyspaces/galaxy/tables/acs_data/rows/12 \
+  --header 'accept: application/json'  \
+  --header 'content-type: application/json' \
+  --header 'x-cassandra-request-id: 0a1ad008-8912-4732-b2ee-012a99f9a033' \
+  --header 'x-cassandra-token: e978d076-8a56-48ec-8dec-68a08b48fec4'
+
+-- graphQL to query a row
+curl --location --request \
+   POST 'https://{databaseid}-{region}.apps.astra.datastax.com/api/graphql' --header 'accept: */*' \
+  --header 'content-type: application/json' \
+  --header 'x-cassandra-request-id: "43f01586-62b7-452c-9fd8-6952a14bb94d"' \
+  --header 'X-Cassandra-Token: 051905ac-6d81-4fca-9654-0cb95b588634' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{"query":"query {products(value: {id:201}) {values {id name descr}}}"}'
+
+
+Documentation:
+https://astra.readme.io/docs/generating-authorization-token

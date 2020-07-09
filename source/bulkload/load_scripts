@@ -1,0 +1,62 @@
+export PATH=$PATH:/opt/datastax/dsbulk-1.5.0/bin:/opt/datastax/cqlsh-astra/bin
+
+setopt interactive_comments
+#
+# load storm data
+#
+dsbulk load \
+-u userName -p passWord -b "/path.to.your.secure.connect.bundle.zipfile/secure-connect-space.zip" \
+-k yourKeySpaceName -t storm_data \
+-url /your.project.folder/data/stormdata_datasax.csv \
+-header true \
+-m "UUID()=event_id,CurrentTimeStamp()=added_on,fips_state=fips_state,fips_st_code=fips_st_code,event_year=event_year,event_month=event_month,event_type=event_type,injuries_direct=injuries_direct,injuries_indirect=injuries_indirect,death_direct=death_direct,death_indirect=death_indirect,event_source=event_source,episode_narrative=episode_narrative"
+
+#
+# load acs_data
+#
+dsbulk load \
+-u userName -p passWord -b "/path.to.your.secure.connect.bundle.zipfile/secure-connect-space.zip" \
+-k yourKeySpaceName -t acs_data \
+-url /your.project.folder/data/censusACSData_datastax.csv \
+-header true
+
+#
+# policy_info
+#
+dsbulk load \
+-u userName -p passWord -b "/path.to.your.secure.connect.bundle.zipfile/secure-connect-space.zip" \
+-url /your.project.folder/data/policyInfo_datastax.csv \
+-header true \
+-query "INSERT INTO yourKeySpaceName.policy_info \
+            (fips_state,fips_county, policies, total_coverage, total_premium, \
+            added_on, community, data_source) \
+          VALUES \
+            (:fips_state, :fips_county, :policies, :total_coverage,:total_premium, \
+             CurrentTimeStamp(), :community, 'policyInfo_datastax1') \
+       "
+#
+# policy_losses
+#
+dsbulk load \
+-u userName -p passWord -b "/path.to.your.secure.connect.bundle.zipfile/secure-connect-space.zip" \
+-k yourKeySpaceName -t policy_losses \
+-url /your.project.folder/data/FinancialLossesByState_dataStax.csv \
+-header true \
+-m "CurrentTimeStamp()=added_on, \
+fips_st_code=fips_st_code, \
+fips_state=fips_state, \
+policy_cnt=policy_loss_count, \
+closed_with_payment_losses=closed_with_payment_losses, \
+open_losses=open_losses, \
+closed_without_payment_losses=closed_without_payment_losses, \
+payments=payments \
+"
+
+#
+#load census data
+#
+dsbulk load \
+-u userName -p passWord -b "/path.to.your.secure.connect.bundle.zipfile/secure-connect-space.zip" \
+-k yourKeySpaceName -t census_data \
+-url /your.project.folder/data/nst-est2019-01_datastax.csv \
+-header true

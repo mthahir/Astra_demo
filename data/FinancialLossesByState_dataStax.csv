@@ -1,0 +1,53 @@
+﻿fips_st_code,fips_state,policy_cnt,closed_with_payment_losses,open_losses,closed_without_payment_losses,payments
+1,Alabama,114,29,66,19,465210.89
+2,Alaska,2,1,1,0,54613.42
+4,Arizona,10,4,0,6,107039.74
+5,Arkansas,30,16,5,9,355513.70
+6,California,64,23,12,29,479858.83
+8,Colorado,3,1,1,1,390.78
+9,Connecticut,20,9,4,7,298388.66
+10,Delaware,20,9,1,10,90388.67
+11,District of Columbia,2,2,0,0,5775.04
+12,Florida,605,274,140,191,11350339.70
+13,Georgia,102,33,46,23,665421.59
+15,Hawaii,21,4,2,15,120006.48
+16,Idaho,1,0,0,1,0.00
+17,Illinois,45,19,14,12,277255.08
+18,Indiana,13,3,3,7,20799.55
+19,Iowa,9,6,1,2,47818.72
+20,Kansas,1,0,0,1,0.00
+21,Kentucky,95,43,40,12,982313.24
+22,Louisiana,130,59,25,46,1975551.52
+23,Maine,3,0,1,2,0.00
+24,Maryland,55,39,7,9,837467.42
+25,Massachusetts,26,9,6,11,321721.63
+26,Michigan,98,50,20,28,1236994.88
+27,Minnesota,16,11,3,2,110437.39
+28,Mississippi,301,109,139,53,4030127.17
+29,Missouri,47,32,2,13,317258.08
+30,Montana,2,0,2,0,0.00
+31,Nebraska,1,0,0,1,0.00
+32,Nevada,2,1,0,1,9756.85
+33,New Hampshire,61,27,6,28,855596.87
+34,New Jersey,8,1,4,3,5848.06
+35,New Mexico,331,241,36,54,7295159.05
+36,New York,266,164,56,46,2534753.63
+37,North Carolina,19,12,3,4,65748.70
+38,North Dakota,13,2,3,8,15537.03
+39,Ohio,1,0,1,0,0.00
+40,Oklahoma,34,3,24,7,193401.72
+41,Oregon,44,33,4,7,629988.41
+42,Pennsylvania,2,0,2,0,0.00
+44,Rhode Island,2,1,0,1,9420.15
+45,South Carolina,134,47,50,37,723129.40
+46,South Dakota,7,3,2,2,65867.28
+47,Tennessee,153,64,73,16,1333651.34
+48,Texas,126,34,23,69,460587.27
+49,Utah,1,0,0,1,0.00
+50,Vermont,25,20,1,4,614729.39
+51,Virginia,68,21,22,25,291280.10
+53,Washington,1,0,1,0,0.00
+54,West Virginia,225,54,136,35,1517914.18
+55,Wisconsin,12,2,8,2,17163.29
+56,Wyoming,71,50,4,17,667361.25
+72,Puerto Rico,1,0,1,0,0.00
